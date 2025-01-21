@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
-import Menu from "../pages/Menu/Menu/Menu";
+import Colleges from "../pages/Menu/Menu/Colleges";
 // import Order from "../pages/Order/Order/Order";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
-import Secret from "../pages/Shared/Secret/Secret";
+
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../pages/Dashboard/Cart/Cart";
@@ -19,8 +19,13 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
+import CollegeRoute from "../pages/Home/CollegeRoute/CollegeRoute";
+import CollegeDetails from "../pages/Home/CollegeRoute/CollegeDetails";
+import AdmissionRoute from "../pages/Home/Admission/AdmissionRoute";
+import AdmissionForm from "../pages/Home/Admission/AdmissionForm";
+import MyCollege from "../pages/Home/MyCollege/MyCollege";
 
-// console.log(useLoaderData)
+
 
 export const router = createBrowserRouter([
   {
@@ -32,8 +37,33 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/menu",
-        element: <Menu />,
+        path: "/collegeRoute",
+        element: <CollegeRoute />,
+      },
+      {
+        path: "/details",
+        element: <CollegeDetails />
+      },
+     
+      {
+        path: "/colleges",
+        element: <Colleges />
+      },
+      {
+        path: "/admission",
+        element: <AdmissionRoute />
+      },
+      {
+        path: "/admission/:id",
+        element: <AdmissionForm />
+      },
+      {
+        path: "/my-college",
+        element: <MyCollege />
+      },
+      {
+        path: "/rev",
+        element: <MyCollege />
       },
       {
         path: "/order/:category",
@@ -46,15 +76,8 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
-      },
-      {
-        path: "/secret",
-        element: (
-          <PrivateRoute>
-            <Secret />
-          </PrivateRoute>
-        ),
-      },
+      }
+      
     ],
   },
   {

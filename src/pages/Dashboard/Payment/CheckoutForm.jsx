@@ -8,8 +8,6 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-
-
 const CheckoutForm = () => {
     const [error, setError] = useState('');
     const stripe = useStripe();

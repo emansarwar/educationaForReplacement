@@ -20,7 +20,7 @@ const Testimonial = () => {
   }, []);
   return (
     <section className="mt-20">
-      <SectionTitle heading={"Testimonials"} subHeading={"What Our Client Say"}></SectionTitle>
+      <SectionTitle heading={"Review"} subHeading={"What Our Client Say"}></SectionTitle>
 
       <Swiper
         slidesPerView={1}

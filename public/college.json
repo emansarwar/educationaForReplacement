@@ -1,0 +1,239 @@
+[
+    
+    {
+      "id": 1,
+      "image": "https://i.ibb.co.com/WKdZRzp/pexels-einfoto-2350925.jpg",
+      "college_name": "Pine Valley Institute of Technology",
+      "admission_dates": {
+        "start": "2025-03-20",
+        "end": "2025-06-15"
+      },
+      "events": [
+        "Hackathon",
+        "AI Workshop",
+        "Startup Pitch Event"
+      ],
+      "research_history": {
+        "established_year": 2005,
+        "notable_research": [
+          "Cybersecurity Systems",
+          "Quantum Computing Applications"
+        ]
+      },
+      "sports": [
+        "Soccer",
+        "Badminton",
+        "Esports"
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co.com/ZVcW2nr/pexels-chris-duan-259139750-12610210.jpg",
+      "college_name": "Crestwood College of Arts and Sciences",
+      "admission_dates": {
+        "start": "2025-01-15",
+        "end": "2025-03-30"
+      },
+      "events": [
+        "Drama Festival",
+        "Science Olympiad",
+        "Annual Debate"
+      ],
+      "research_history": {
+        "established_year": 1972,
+        "notable_research": [
+          "Climate Change Impact Studies",
+          "Behavioral Psychology"
+        ]
+      },
+      "sports": [
+        "Hockey",
+        "Tennis",
+        "Swimming"
+      ]
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co.com/tPQQxjL/pexels-lobiya-70588477-30052431.jpg",
+      "college_name": "Delhi University",
+      "admission_dates": {
+        "start": "2025-01-15",
+        "end": "2025-03-30"
+      },
+      "events": [
+        "Drama Festival",
+        "Science Olympiad",
+        "Annual Debate"
+      ],
+      "research_history": {
+        "established_year": 1972,
+        "notable_research": [
+          "Climate Change Impact Studies",
+          "Behavioral Psychology"
+        ]
+      },
+      "sports": [
+        "Hockey",
+        "Tennis",
+        "Swimming"
+      ]
+    },
+    {
+      
+      "id": 4,
+      "image": "https://i.ibb.co.com/GdHsnbt/pexels-pixabay-207692.jpg",
+      "college_name": "Greenwood University",
+      "admission_dates": {
+        "start": "2025-03-01",
+        "end": "2025-05-31"
+      },
+      "events": [
+        "Science Fair",
+        "Cultural Fest",
+        "Alumni Meet"
+      ],
+      "research_history": {
+        "established_year": 1998,
+        "notable_research": [
+          "Renewable Energy Innovations",
+          "AI in Healthcare"
+        ]
+      },
+      "sports": [
+        "Basketball",
+        "Soccer",
+        "Swimming"
+      ]
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co.com/wcX29NK/pexels-pixabay-247823.jpg",
+      "college_name": "Harbor Tech College",
+      "admission_dates": {
+        "start": "2025-02-15",
+        "end": "2025-04-30"
+      },
+      "events": [
+        "Tech Symposium",
+        "Entrepreneurship Bootcamp",
+        "Robotics Competition"
+      ],
+      "research_history": {
+        "established_year": 1985,
+        "notable_research": [
+          "Marine Technology",
+          "Advanced Robotics"
+        ]
+      },
+      "sports": [
+        "Rowing",
+        "Tennis",
+        "Track and Field"
+      ]
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co.com/7Cv28gp/pexels-johny-rebel-the-explorer-panda-114076-357271.jpg",
+      "college_name": "Summit Liberal Arts College",
+      "admission_dates": {
+        "start": "2025-04-01",
+        "end": "2025-06-30"
+      },
+      "events": [
+        "Art Exhibition",
+        "Philosophy Lecture Series",
+        "Spring Music Festival"
+      ],
+      "research_history": {
+        "established_year": 1960,
+        "notable_research": [
+          "Postmodern Literature",
+          "Ethics in Artificial Intelligence"
+        ]
+      },
+      "sports": [
+        "Volleyball",
+        "Baseball",
+        "Cross Country"
+      ]
+    },
+    {
+      "id": 7,
+      "image": "https://i.ibb.co.com/svQVKvr/pexels-rednguyen-22039140.jpg",
+      "college_name": "Crestwood College of Arts and Sciences",
+      "admission_dates": {
+        "start": "2025-01-15",
+        "end": "2025-03-30"
+      },
+      "events": [
+        "Drama Festival",
+        "Science Olympiad",
+        "Annual Debate"
+      ],
+      "research_history": {
+        "established_year": 1972,
+        "notable_research": [
+          "Climate Change Impact Studies",
+          "Behavioral Psychology"
+        ]
+      },
+      "sports": [
+        "Hockey",
+        "Tennis",
+        "Swimming"
+      ]
+    },
+    {
+      "id": 8,
+      "image": "https://i.ibb.co.com/7Cv28gp/pexels-johny-rebel-the-explorer-panda-114076-357271.jpg",
+      "college_name": "Crestwood College of Arts and Sciences",
+      "admission_dates": {
+        "start": "2025-01-15",
+        "end": "2025-03-30"
+      },
+      "events": [
+        "Drama Festival",
+        "Science Olympiad",
+        "Annual Debate"
+      ],
+      "research_history": {
+        "established_year": 1972,
+        "notable_research": [
+          "Climate Change Impact Studies",
+          "Behavioral Psychology"
+        ]
+      },
+      "sports": [
+        "Hockey",
+        "Tennis",
+        "Swimming"
+      ]
+    },
+    {
+      "id": 9,
+      "image": "https://i.ibb.co.com/nM9pvYL/pexels-tomfisk-3613020.jpg",
+      "college_name": "Crestwood College of Arts and Sciences",
+      "admission_dates": {
+        "start": "2025-01-15",
+        "end": "2025-03-30"
+      },
+      "events": [
+        "Drama Festival",
+        "Science Olympiad",
+        "Annual Debate"
+      ],
+      "research_history": {
+        "established_year": 1972,
+        "notable_research": [
+          "Climate Change Impact Studies",
+          "Behavioral Psychology"
+        ]
+      },
+      "sports": [
+        "Hockey",
+        "Tennis",
+        "Swimming"
+      ]
+    }
+  ]
+  

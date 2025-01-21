@@ -117,10 +117,10 @@ const Login = () => {
             <div className="form-control mt-6">
               
               <input className="btn btn-primary" type="submit"  value="Login"/>
-              {/* <input className="btn btn-primary" type="submit" disabled={disabled} value="Login" /> */}
+              
             </div>
           </form>
-          <SocialLogin></SocialLogin>
+          {/* <SocialLogin></SocialLogin> */}
           <p className='text-center'>Are you new here? <Link to="/signup"><button className="mt-2 btn btn-outline">Create an account</button></Link> </p>
           
           

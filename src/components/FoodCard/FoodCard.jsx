@@ -66,6 +66,10 @@ const FoodCard = ({ item }) => {
         <hr />
         <p className="text-justify">{recipe}</p>
         <p className="font-bold text-justify text-white">Price: ${price}</p>
+        <p className="font-bold text-justify text-white">Admission Dates: {price}</p>
+        <p className="font-bold text-justify text-white">Events: {price}</p>
+        <p className="font-bold text-justify text-white">Research History: {price}</p>
+        <p className="font-bold text-justify text-white">Sports: {price}</p>
         <div className="mt-3 card-actions justify">
           <button onClick={handleAddToCart} className="bg-emerald-700 btn">
             Add to Cart

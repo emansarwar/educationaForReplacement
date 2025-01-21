@@ -10,30 +10,42 @@ import useAdmin from "../../../hooks/useAdmin";
 const NavBar = () => {
   const [cart] = useCart();
   const { user, logOut } = useContext(AuthContext);
-  const [isAdmin] = useAdmin();
+  // const [isAdmin] = useAdmin();
   const handleLogout = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
   };
+  const admOptions = (
+    <>
+    <li className="hover:bg-cyan-700 rounded-lg font-bold"><Link to="/dashboard/adminHome">Dashboard</Link></li>
+    </>
+  );
+  const userOptions = (
+    <>
+    <li className="hover:bg-cyan-700 rounded-lg font-bold"><Link to="/dashboard/userHome">Dashboard</Link></li>
+    </>
+  );
   const navoptions = (
     <>
       <li className="hover:bg-cyan-700 rounded-lg font-bold">
         <Link  to="/">Home</Link>
       </li>
       <li className="hover:bg-cyan-700 rounded-lg font-bold">
-        <Link to="/menu">Our Menu</Link>
+        <Link to="/collegeRoute">Colleges</Link>
+      </li>
+      
+      <li className="hover:bg-cyan-700 rounded-lg font-bold">
+        <Link to="/admission">Admission</Link>
       </li>
       <li className="hover:bg-cyan-700 rounded-lg font-bold">
+        <Link to="/my-college">My College</Link>
+      </li>
+      {/* <li className="hover:bg-cyan-700 rounded-lg font-bold">
         <Link to="/order/salad">Order</Link>
         
-      </li>
-      {
-        user && isAdmin && <li className="hover:bg-cyan-700 rounded-lg font-bold"><Link to="/dashboard/adminHome">Admin Home</Link></li>
-      }
-      {
-        user && !isAdmin && <li className="hover:bg-cyan-700 rounded-lg font-bold"><Link to="/dashboard/userHome">User Home</Link></li>
-      }
+      </li> */}
+      
       <li className="hover:bg-cyan-700 rounded-lg font-bold">
         <Link to="/dashboard/carts">
           <FaShoppingCart className="mr-4"></FaShoppingCart>+{cart.length}
@@ -63,7 +75,7 @@ const NavBar = () => {
   );
   return (
     <>
-      <div className="z-10 fixed bg-cyan-800 bg-opacity-95 navbar">
+      <div className="top-0 z-10 sticky bg-cyan-800 bg-opacity-95 navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden btn btn-ghost">

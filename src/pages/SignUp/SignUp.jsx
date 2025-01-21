@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from "react-simple-captcha";
-// import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha} from 'react-simple-captcha';
-// import { AuthContext } from '../../providers/AuthProvider';
+
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
@@ -139,15 +138,15 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value="SignUp" />
-                {/* <input className="btn btn-primary" type="submit" disabled={disabled} value="Login" /> */}
+            
               </div>
             </form>
-            <SocialLogin></SocialLogin>
+            {/* <SocialLogin></SocialLogin> */}
             <p className="text-center">
               Already have an account?
               <Link to="/login">
                 <button className="mt-4 btn btn-outline">Please Login</button>
-              </Link>{" "}
+              </Link>
             </p>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const PopularMenu = () => {
+  
     const [menu] = useMenu();
     const popular = menu.filter(item => item.category === 'popular');
     
@@ -14,10 +15,10 @@ const PopularMenu = () => {
   return (
     <section className="mx-5 mb-12 px-10 text-center">
         <SectionTitle
-        heading="From Our Menu"
-        subHeading="Popular Items"
+        heading="Our Colleges"
+        // subHeading="Our Colleges"
         ></SectionTitle>
-        <div className="gap-10 grid md:grid-cols-2">
+        <div className="gap-10 grid md:grid-cols-3">
             {
                 popular.map(item=> <MenuItem
                 key={item._id}
@@ -26,7 +27,7 @@ const PopularMenu = () => {
                 )
             }
         </div>
-        <button className="border-1 mt-4 border-b-4 w-1/2 btn btn-outline"><Link to="/menu">View Full Menu</Link></button>
+        <button className="border-1 mt-4 border-b-4 w-1/2 btn btn-outline"><Link to="/colleges">View Full Menu</Link></button>
         
 
     </section>
