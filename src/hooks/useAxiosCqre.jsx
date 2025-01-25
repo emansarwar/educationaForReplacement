@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 // import React from 'react'
 const axiosCqre = axios.create({
-  baseURL: "https://food-server-sepia-nine.vercel.app",
+  baseURL: "http://localhost:5000",
 });
 const useAxiosCqre = () => {
   const navigate = useNavigate();

@@ -1,17 +1,21 @@
 import { useForm } from "react-hook-form";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from "react-simple-captcha";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPubleague from "../../hooks/useAxiosPubleague";
-import SocialLogin from "../../components/SocialLogin/SocialLogin";
+// import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const axiosPubleague = useAxiosPubleague();
   const navigate = useNavigate();
+      const location = useLocation();
+      
+      
+      const from = location.state?.from?.pathname || "/";
   
   // const [disabled, setDisabled] = useState(true);
   const {
@@ -23,39 +27,7 @@ const SignUp = () => {
 
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
-  const onSubmit = (data) => {
-    // console.log(data);
-    createUser(data.email, data.password)
-    .then((result) => {
-      const loggedUser = result.user;
-      // console.log(loggedUser);
-      updateUserProfile(data.name)
-        .then(() => {
-          //create user entry in the database
-          const userInfo = {
-            name: data.name,
-            email: data.email,
-          };
-          axiosPubleague.post("/users", userInfo)
-          .then((res) => {
-            if (res.data.insertedId) {
-              
-              // console.log('user added to the database', res)
-              reset();
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Your work has been saved",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              navigate("/");
-            }
-          });
-        })
-        .catch((error) => console.log(error));
-    });
-  };
+  
 
   useEffect(() => {
     loadCaptchaEnginge(3);
@@ -78,7 +50,78 @@ const SignUp = () => {
     //     const user = result.user;
     //     console.log(user);
     // })
+    navigate(from, {replace: true})
   };
+
+  // const onSubmit = async (data) => {
+  //   try {
+  //     const result = await createUser(data.email, data.password);
+  //     const loggedUser = result.user;
+  
+  //     await updateUserProfile({
+  //       name: data.name,
+  //       email: data.email,
+  //       university: data.university
+        
+  //     });
+  
+  //     Swal.fire({
+  //       position: "top-end",
+  //       icon: "success",
+  //       title: "Your account has been created!",
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  
+  //     reset(); // Clear form fields
+  //     navigate(from, { replace: true });
+  //   } catch (error) {
+  //     console.error("Error during sign-up:", error.message);
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: error.message || "Something went wrong!",
+  //     });
+  //   }
+  // };
+  
+  const onSubmit = (data) => {
+    // console.log(data);
+    createUser(data.email, data.password)
+    .then((result) => {
+      
+      // const loggedUser = result.user;
+      
+      updateUserProfile(data.name)
+        .then(() => {
+          //create user entry in the database
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPubleague.post("/users", userInfo)
+          .then((res) => {
+            if (res.data.insertedId) {
+              
+              console.log('user added to the database', res)
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate(from, {replace: true})
+              // navigate("/");
+            }
+          });
+        })
+        .catch((error) => console.log(error));
+    });
+    navigate(from, {replace: true})
+  };
+
   return (
     <>
       <Helmet>
@@ -92,7 +135,7 @@ const SignUp = () => {
             Sign up today to enjoy all the benefits of being a member! From saving your favorite dishes to getting special discounts, our easy sign-up process gives you access to personalized offers and faster ordering. It's the first step towards a better, more convenient dining experience.
             </p>
           </div>
-          <div onSubmit={handleLogin} className="bg-emerald-600 shadow-2xl w-full max-w-sm card shrink-0">
+          <div  className="bg-emerald-600 shadow-2xl w-full max-w-sm card shrink-0">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               {/* <form  onSubmit={handleSubmit(onSubmit)} onSubmit={handleLogin} className="card-body"> */}
               <div className="form-control">

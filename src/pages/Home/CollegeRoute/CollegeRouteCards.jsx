@@ -17,6 +17,7 @@ const CollegeRouteCards = ({ college }) => {
 
           <p className="font-bold">Sports :{sports[0]},{sports[1]}</p>
           <p className="font-bold text-red-400">Admission Deadline :{admission_dates.end}</p>
+          {/* <PrivateRoute></PrivateRoute> */}
           <Link to="/details"
           state={{ college }}>
             <button className="w-full btn btn-primary">Details</button>

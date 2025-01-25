@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import Profile from "../Profile/Profile";
+
 
 const AdmissionRoute = () => {
   const [admissionData, setAdmissionData] = useState([]);
@@ -9,6 +11,7 @@ const AdmissionRoute = () => {
       .then((res) => res.json())
       .then((data) => setAdmissionData(data));
   }, []);
+  
 
   return (
     <div className="flex flex-col items-center space-y-4 bg-teal-900 p-6 text-center text-white">
@@ -20,12 +23,15 @@ const AdmissionRoute = () => {
             to={`/admission/${college.id}`}
             state={{ college }}
           >
+            
+           
             <button className="bg-teal-500 hover:bg-teal-600 px-4 py-2 rounded-lg w-full font-semibold text-white">
               {college.name}
             </button>
           </Link>
         ))}
       </div>
+      
     </div>
   );
 };

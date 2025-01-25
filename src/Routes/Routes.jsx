@@ -8,15 +8,15 @@ import SignUp from "../pages/SignUp/SignUp";
 
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
-import Cart from "../pages/Dashboard/Cart/Cart";
+// import Cart from "../pages/Dashboard/Cart/Cart";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddItems from "../pages/Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import UpdateItem from "../pages/Dashboard/updateItem/updateItem";
-import Order from "../pages/Order/Order/Order";
-import Payment from "../pages/Dashboard/Payment/Payment";
-import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+// import Order from "../pages/Order/Order/Order";
+// import Payment from "../pages/Dashboard/Payment/Payment";
+// import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import CollegeRoute from "../pages/Home/CollegeRoute/CollegeRoute";
@@ -24,8 +24,8 @@ import CollegeDetails from "../pages/Home/CollegeRoute/CollegeDetails";
 import AdmissionRoute from "../pages/Home/Admission/AdmissionRoute";
 import AdmissionForm from "../pages/Home/Admission/AdmissionForm";
 import MyCollege from "../pages/Home/MyCollege/MyCollege";
-
-
+import NotFound from "../pages/Notfound/Notfound";
+import Profile from "../pages/Home/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -40,35 +40,36 @@ export const router = createBrowserRouter([
         path: "/collegeRoute",
         element: <CollegeRoute />,
       },
-      {
-        path: "/details",
-        element: <CollegeDetails />
-      },
-     
+      
+
       {
         path: "/colleges",
-        element: <Colleges />
+        element: <Colleges />,
       },
       {
         path: "/admission",
-        element: <AdmissionRoute />
+        element: <AdmissionRoute />,
       },
       {
         path: "/admission/:id",
-        element: <AdmissionForm />
+        element: <AdmissionForm />,
       },
       {
         path: "/my-college",
-        element: <MyCollege />
+        element: <MyCollege />,
       },
       {
-        path: "/rev",
-        element: <MyCollege />
+        path: "/users",
+        element: <Profile />,
       },
       {
-        path: "/order/:category",
-        element: <Order />,
+        path: "*",
+        element: <NotFound />,
       },
+      // {
+      //   path: "/order/:category",
+      //   element: <Order />,
+      // },
       {
         path: "/login",
         element: <Login />,
@@ -76,75 +77,40 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
-      }
-      
+      },
     ],
   },
   {
-    path: "dashboard",
+    path: "/details",
     element: (
       <PrivateRoute>
-        <Dashboard></Dashboard>
+        <CollegeDetails />
       </PrivateRoute>
-    ),
-
-    children: [
-      //normal users routes
-      {
-        path: "userHome",
-        element: <UserHome />,
-      },
-      {
-        path: "carts",
-        element: <Cart />,
-      },
-      {
-        path: "paymentHistory",
-        element: <PaymentHistory />,
-      },
-      {
-        path: "payment",
-        element: <Payment />,
-      },
-      // Admin routes
-      {
-        path: "adminHome",
-        element: <AdminHome></AdminHome>,
-      },
-      {
-        path: "addItems",
-        element: (
-          <AdminRoute>
-            <AddItems />
-          </AdminRoute>
-        ),
-      },
-      {
-        path: "manageItems",
-        element: (
-          <AdminRoute>
-            <ManageItems />
-          </AdminRoute>
-        ),
-      },
-      {
-        path: "updateItem/:id",
-
-        element: (
-          <AdminRoute>
-            <UpdateItem />
-          </AdminRoute>
-        ),
-        loader: ({ params }) => fetch(`https://food-server-sepia-nine.vercel.app/menu/${params.id}`),
-      },
-      {
-        path: "users",
-        element: (
-          <AdminRoute>
-            <AllUsers />
-          </AdminRoute>
-        ),
-      },
-    ],
+    )
   },
+  {
+    path: "details",
+    element: (
+      <PrivateRoute>
+        <Profile />
+      </PrivateRoute>
+    )
+  },
+// {
+//     children: [
+      
+     
+//       {
+//         path: "/details",
+//         element: <CollegeDetails />,
+//       },
+      
+//       {
+//         path: "/profile",
+//         element: <Profile />,
+//       }
+      
+     
+//     ]
+//   },
 ]);

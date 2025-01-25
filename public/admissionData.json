@@ -17,42 +17,7 @@
     "researchHistory": "Energy, Tech",
     "sports": "Football, Tennis"
   },
-  {
-    "id": 2,
-    "name": "Rajshahi University",
-    "image": "https://via.placeholder.com/150",
-    "admissionDates": "Dec 1 - Mar 15",
-    "events": "Startup Showcase",
-    "researchHistory": "Energy, Tech",
-    "sports": "Football, Tennis"
-  },
-  {
-    "id": 2,
-    "name": "Jahangirnagar University",
-    "image": "https://via.placeholder.com/150",
-    "admissionDates": "Dec 1 - Mar 15",
-    "events": "Startup Showcase",
-    "researchHistory": "Energy, Tech",
-    "sports": "Football, Tennis"
-  },
-  {
-    "id": 2,
-    "name": "Dhaka University",
-    "image": "https://via.placeholder.com/150",
-    "admissionDates": "Dec 1 - Mar 15",
-    "events": "Startup Showcase",
-    "researchHistory": "Energy, Tech",
-    "sports": "Football, Tennis"
-  },
-  {
-    "id": 2,
-    "name": "Chittagong University",
-    "image": "https://via.placeholder.com/150",
-    "admissionDates": "Dec 1 - Mar 15",
-    "events": "Startup Showcase",
-    "researchHistory": "Energy, Tech",
-    "sports": "Football, Tennis"
-  },
+  
   {
     "id": 3,
     "name": "MIT",
@@ -362,6 +327,42 @@
   {
     "id": 37,
     "name": "Chittagong University",
+    "image": "https://via.placeholder.com/150",
+    "admissionDates": "Dec 1 - Mar 15",
+    "events": "Startup Showcase",
+    "researchHistory": "Energy, Tech",
+    "sports": "Football, Tennis"
+  },
+  {
+    "id": 38,
+    "name": "Khulna University",
+    "image": "https://via.placeholder.com/150",
+    "admissionDates": "Dec 1 - Mar 15",
+    "events": "Startup Showcase",
+    "researchHistory": "Energy, Tech",
+    "sports": "Football, Tennis"
+  },
+  {
+    "id": 39,
+    "name": "Jagannath University",
+    "image": "https://via.placeholder.com/150",
+    "admissionDates": "Dec 1 - Mar 15",
+    "events": "Startup Showcase",
+    "researchHistory": "Energy, Tech",
+    "sports": "Football, Tennis"
+  },
+  {
+    "id": 40,
+    "name": "BUET",
+    "image": "https://via.placeholder.com/150",
+    "admissionDates": "Dec 1 - Mar 15",
+    "events": "Startup Showcase",
+    "researchHistory": "Energy, Tech",
+    "sports": "Football, Tennis"
+  },
+  {
+    "id": 41,
+    "name": "Chittagong University of Engineering & Technology",
     "image": "https://via.placeholder.com/150",
     "admissionDates": "Dec 1 - Mar 15",
     "events": "Startup Showcase",

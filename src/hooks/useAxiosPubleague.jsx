@@ -2,7 +2,7 @@ import axios from "axios";
 
 // import React from 'react'
 const axiosPubleague = axios.create({
-  baseURL: "https://food-server-sepia-nine.vercel.app",
+  baseURL: "http://localhost:5000",
 });
 
 const useAxiosPubleague = () => {

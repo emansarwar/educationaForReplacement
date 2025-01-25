@@ -11,7 +11,7 @@ import "@smastrom/react-rating/style.css";
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://food-server-sepia-nine.vercel.app/reviews")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => {
         // const popularItems = data.filter(item => item.category === 'popular');

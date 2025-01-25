@@ -14,10 +14,11 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     
-    // const from = location.state?.from?.pathname;
-    const from = location.state?.from?.pathname || "/";
     
-    // console.log('state in the location for login page', location.state)
+    const from = location.state?.from?.pathname || "/";
+    // const from = location.state?.from?.pathname || "/";
+    
+    
 
     useEffect(()=>{
         loadCaptchaEnginge(3);
@@ -66,7 +67,7 @@ const Login = () => {
               }
             });
             
-            navigate(from, {replace: true})
+           navigate(from, {replace: true})
         })
 
 

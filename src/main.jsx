@@ -5,19 +5,23 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/Routes";
 import { HelmetProvider } from "react-helmet-async";
 import AuthProvider from "./providers/AuthProvider";
-import { QueryClient, QueryClientProvider} from "@tanstack/react-query";
-const queryClient = new QueryClient();
+// import { QueryClient, QueryClientProvider} from "@tanstack/react-query";
+// import { VarsityProvider } from "./providers/VarsityProvider";
+// const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-      <QueryClientProvider client={queryClient}>
+      {/* <VarsityProvider> */}
+      {/* <QueryClientProvider client={queryClient}> */}
         <HelmetProvider>
           <div className="max-w-full">
             <RouterProvider router={router} />
           </div>
         </HelmetProvider>
-      </QueryClientProvider>
+      {/* </QueryClientProvider> */}
+      {/* </VarsityProvider> */}
+      
     </AuthProvider>
   </StrictMode>
 );

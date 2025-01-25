@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "food-staton"
-  }
+    "default": "educationalforjobreplacement",
+    "prod": "educationalforjobreplacement",
+    "y": "educationalforjobreplacement"
+  },
+  "targets": {},
+  "etags": {}
 }

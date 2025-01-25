@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
-import useCart from "../../../hooks/useCart";
+// import useCart from "../../../hooks/useCart";
 import useAdmin from "../../../hooks/useAdmin";
 
 const NavBar = () => {
-  const [cart] = useCart();
+  // const [cart] = useCart();
   const { user, logOut } = useContext(AuthContext);
   // const [isAdmin] = useAdmin();
   const handleLogout = () => {
@@ -41,23 +41,17 @@ const NavBar = () => {
       <li className="hover:bg-cyan-700 rounded-lg font-bold">
         <Link to="/my-college">My College</Link>
       </li>
-      {/* <li className="hover:bg-cyan-700 rounded-lg font-bold">
-        <Link to="/order/salad">Order</Link>
-        
-      </li> */}
       
-      <li className="hover:bg-cyan-700 rounded-lg font-bold">
-        <Link to="/dashboard/carts">
-          <FaShoppingCart className="mr-4"></FaShoppingCart>+{cart.length}
-        </Link>
-      </li>
 
       {user ? (
         <>
           
           <li className="hover:bg-cyan-700 rounded-lg font-bold">
-            <Link className="cursor-default pointer-events-none">{user?.displayName}</Link>
+            <Link  to="/users" >{user?.displayName || "Profile"}</Link>
           </li>
+          {/* <li className="hover:bg-cyan-700 rounded-lg font-bold">
+            <Link to="/users" className="">{user?.displayName}</Link>
+          </li> */}
           <li className="hover:bg-cyan-700 rounded-lg font-bold">
             <Link onClick={handleLogout} to="/login">
               Logout
@@ -87,7 +81,7 @@ const NavBar = () => {
               {navoptions}
             </ul>
           </div>
-          <a to="/home" className="font-bold text-xl btn btn-ghost">Food-Station</a>
+          <a to="/home" className="font-bold text-xl btn btn-ghost">Education-Media</a>
         </div>
         <div className="lg:flex hidden navbar-center">
           <ul className="px-1 menu menu-horizontal">{navoptions}</ul>
