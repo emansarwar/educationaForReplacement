@@ -1,37 +1,23 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-// import { useVarsity } from "../../../providers/VarsityProvider";
-// import useVarsity from "../../../hooks/useVarsity";
-// import useAuth from "../../../hooks/useAuth";
+
 
 const AdmissionForm = () => {
   // const { varsity, setVarsity } = useVarsity();
 
   const location = useLocation();
-  // const auth = useAuth();
-  // const user = auth.user;
+  
   const { user } = useContext(AuthContext);
   const college = location.state?.college;
   const collegeName = college?.name;
 
-  // useEffect(() => {
-  //   if (data && data !== varsity) {
-  //     setVarsity(data);
-  //   }
-  // }, [data, varsity, setVarsity]);
-  // console.log("------",varsity)
+  
   const navigate = useNavigate();
   console.log("admission user", user);
   console.log("admission user", user?.displayName);
 
-  // console.log("admission user",auth?.user?.displayName);
-  // if (user) {
-  //   console.log("User Name:", user.displayName);
-  //   console.log("User Email:", user.email);
-  // } else {
-  //   console.log("No user is logged in.");
-  // }
+  
 
   const [formData, setFormData] = useState({
     displayName: user?.displayName || "",
@@ -46,11 +32,11 @@ const AdmissionForm = () => {
     // Update form data when the user changes
     if (user) {
       setFormData((prevData) => ({
-          ...prevData,
-      displayName: user?.displayName || "",
-      email: user?.email || "",
-    }));
-  }
+        ...prevData,
+        displayName: user?.displayName || "",
+        email: user?.email || "",
+      }));
+    }
   }, [user]);
 
   const handleChange = (e) => {
@@ -64,20 +50,13 @@ const AdmissionForm = () => {
 
   const handleSubmit = async (e) => {
     if (!user) {
-      <button type="button" class="bg-indigo-500 ..." >
+      <button type="button" class="bg-indigo-500 ...">
         <svg class="mr-3 animate-spin ... size-5" viewBox="0 0 24 24"></svg>
         User Loading…
       </button>;
     } else {
       e.preventDefault();
-      // const admissionData = {
-      //   name: formData.displayName, // Correctly use `formData` values
-      //   email: formData.email,
-      //   varsity: data,
-      //   subject: formData.subject,
-      //   phone: formData.phone,
-      //   dateOfBirth: formData.dateOfBirth,
-      // }
+      
       const admissionData = {
         name: user?.displayName,
         email: user?.email,
@@ -86,7 +65,7 @@ const AdmissionForm = () => {
       };
       console.log("admission data", admissionData);
       try {
-        const response = await fetch("http://localhost:5000/users", {
+        const response = await fetch("https://eduplacementserver.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -24,7 +24,7 @@ const Home = () => {
       <div className="mt-5 -mb-5">
         <Search></Search>
       </div>
-      <hr className="mt-5 mb-5" />
+      {/* <hr className="mt-5 mb-5" /> */}
       <CollegeRouteHome></CollegeRouteHome>
       <Category></Category>
       <ResearchPaper></ResearchPaper>

@@ -130,21 +130,21 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Profile = () => {
-    const [loading, setLoading] = useState(true)
-  const { user  } = useContext(AuthContext); // Access the logged-in user
-//   const { user, updateUserProfile } = useContext(AuthContext); 
+  const [loading, setLoading] = useState(true);
+  const { user } = useContext(AuthContext); // Access the logged-in user
+  //   const { user, updateUserProfile } = useContext(AuthContext);
   // Access the logged-in user
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    varsity: ""
+    varsity: "",
   });
-//   const [formData, setFormData] = useState({
-//     name: user?.displayName || "",
-//     email: user?.email || "",
-//     varsity: "",
-//   });
+  //   const [formData, setFormData] = useState({
+  //     name: user?.displayName || "",
+  //     email: user?.email || "",
+  //     varsity: "",
+  //   });
 
   useEffect(() => {
     if (!user?.email) {
@@ -158,38 +158,38 @@ const Profile = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-        setLoading(true);
+      setLoading(true);
       if (!user?.email) {
         console.error("User email is missing");
         return;
       }
-  
+
       try {
-        const response = await fetch(`http://localhost:5000/users?email=${user.email}`);
+        const response = await fetch(`https://eduplacementserver.vercel.app/users?email=${user.email}`);
         const data = await response.json();
-        
+
         // if (!response.ok) {
         //   throw new Error(`HTTP error! status: ${response.status}`);
         // }
-  
-        console.log("Fetched user data:", data); 
-        
+
+        console.log("Fetched user data:", data);
+
         if (data) {
           setFormData({
             name: data.name || user?.displayName || "",
             email: data.email || user?.email || "",
             varsity: data.varsity || "",
           });
-          console.log("varsity:", data.varsity)
+          console.log("varsity:", data.varsity);
         }
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
     };
-  setLoading(false);
+    setLoading(false);
     fetchUserData();
   }, [user?.email]);
-  
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -197,7 +197,7 @@ const Profile = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/users`, {
+      const response = await fetch(`https://eduplacementserver.vercel.app/users`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -205,7 +205,7 @@ const Profile = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-  
+
       if (response.ok) {
         Swal.fire({
           position: "top-end",
@@ -230,37 +230,37 @@ const Profile = () => {
       });
     }
   };
-  
-//   const handleSave = () => {
-//     // Update the user's profile in your database
-//     fetch(`http://localhost:5000/users`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(formData),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         if (data.modifiedCount > 0) {
-//           Swal.fire({
-//             position: "top-end",
-//             icon: "success",
-//             title: "Profile updated successfully!",
-//             showConfirmButton: false,
-//             timer: 1500,
-//           });
-//           setIsEditing(false);
-//         }
-//       })
-//       .catch((error) => {
-//         Swal.fire({
-//           icon: "error",
-//           title: "Oops...",
-//           text: error.message || "Something went wrong!",
-//         });
-//       });
-//   };
+
+  //   const handleSave = () => {
+  //     // Update the user's profile in your database
+  //     fetch(`https://eduplacementserver.vercel.app/users`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.modifiedCount > 0) {
+  //           Swal.fire({
+  //             position: "top-end",
+  //             icon: "success",
+  //             title: "Profile updated successfully!",
+  //             showConfirmButton: false,
+  //             timer: 1500,
+  //           });
+  //           setIsEditing(false);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         Swal.fire({
+  //           icon: "error",
+  //           title: "Oops...",
+  //           text: error.message || "Something went wrong!",
+  //         });
+  //       });
+  //   };
 
   return (
     <div className="bg-green-800 p-10">
@@ -290,11 +290,7 @@ const Profile = () => {
             </div>
             <div>
               <label className="block font-bold">Email:</label>
-              <input 
-              type="email" 
-              name="email" 
-              readOnly
-              value={formData.email} onChange={handleInputChange} className="input-bordered w-full input" />
+              <input type="email" name="email" readOnly value={formData.email} onChange={handleInputChange} className="input-bordered w-full input" />
             </div>
             <div>
               <label className="block font-bold">University:</label>

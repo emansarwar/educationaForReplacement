@@ -13,9 +13,9 @@ const CollegeDetails = () => {
     }
   }, [college, navigate]);
 
-  if (!college) {
-    <p>Loading or redirecting...</p>;
-  }
+  // if (!college) {
+  //   <p>Loading or redirecting...</p>;
+  // }
 
   const { college_name, image, admission_dates, events, sports, research_history } = college;
 

@@ -3,9 +3,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { FaShoppingCart } from "react-icons/fa";
+// import { FaShoppingCart } from "react-icons/fa";
 // import useCart from "../../../hooks/useCart";
-import useAdmin from "../../../hooks/useAdmin";
+// import useAdmin from "../../../hooks/useAdmin";
 
 const NavBar = () => {
   // const [cart] = useCart();
@@ -16,16 +16,8 @@ const NavBar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-  const admOptions = (
-    <>
-    <li className="hover:bg-cyan-700 rounded-lg font-bold"><Link to="/dashboard/adminHome">Dashboard</Link></li>
-    </>
-  );
-  const userOptions = (
-    <>
-    <li className="hover:bg-cyan-700 rounded-lg font-bold"><Link to="/dashboard/userHome">Dashboard</Link></li>
-    </>
-  );
+  
+  
   const navoptions = (
     <>
       <li className="hover:bg-cyan-700 rounded-lg font-bold">
@@ -81,7 +73,7 @@ const NavBar = () => {
               {navoptions}
             </ul>
           </div>
-          <a to="/home" className="font-bold text-xl btn btn-ghost">Education-Media</a>
+          <a to="/home" className="font-bold text-xl btn btn-ghost">Edu-Media</a>
         </div>
         <div className="lg:flex hidden navbar-center">
           <ul className="px-1 menu menu-horizontal">{navoptions}</ul>

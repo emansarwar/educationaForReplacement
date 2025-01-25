@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Sample data with 30+ colleges
 const colleges = [ 
@@ -95,7 +96,7 @@ const colleges = [
                 }}
               />
               {showList && searchTerm.trim() && (
-                <div
+                <div className=""
                   style={{
                     position: "absolute",
                     top: "50px",
@@ -105,14 +106,14 @@ const colleges = [
                     overflowY: "auto",
                     backgroundColor: "#fff",
                     border: "1px solid #ccc",
-                    borderRadius: "5px",
+                    borderRadius: "10px",
                     zIndex: "1000",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                   }}
                 >
                   {filteredColleges.length > 0 ? (
                     filteredColleges.map((college) => (
-                      <div
+                      <div className="bg-indigo-950 h-20"
                         key={college.id}
                         style={{
                           display: "flex",
@@ -120,23 +121,24 @@ const colleges = [
                           borderBottom: "1px solid #eee",
                         }}
                       >
-                        <img
+                        <img className="border"
                           src={college.image}
                           alt={college.name}
                           style={{
-                            width: "50px",
+                            width: "20%",
                             height: "50px",
                             borderRadius: "5px",
                             objectFit: "cover",
                             marginRight: "10px",
                           }}
                         />
-                        <div>
+                        <div className="ml-5 w-3/5">
                           <h3 style={{ margin: "0", fontSize: "16px" }}>{college.name}</h3>
                           <p style={{ margin: "5px 0", fontSize: "12px" }}>
                             Admission Dates: {college.admissionDates}
                           </p>
                         </div>
+                        
                       </div>
                     ))
                   ) : (
@@ -144,6 +146,7 @@ const colleges = [
                       No colleges found.
                     </p>
                   )}
+                  
                 </div>
               )}
             </div>

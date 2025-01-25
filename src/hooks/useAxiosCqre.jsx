@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 // import React from 'react'
 const axiosCqre = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://eduplacementserver.vercel.app",
 });
 const useAxiosCqre = () => {
   const navigate = useNavigate();
